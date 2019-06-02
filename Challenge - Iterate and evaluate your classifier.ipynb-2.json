@@ -1,0 +1,438 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import sklearn\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "from sklearn.model_selection import cross_val_score\n",
+    "from sklearn.metrics import confusion_matrix"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Percentage of correctly labeled points out of a total 1000 points : 59.0%\n",
+      "Confusion Matrix:\n",
+      "[[475  25]\n",
+      " [385 115]]\n",
+      "Sensitivity % = 23.0%\n",
+      "Specificity % = 95.0%\n",
+      "With 20% Holdout: 0.585\n",
+      "Testing on Sample: 0.59\n",
+      "Holdout Group Results:\n",
+      "[0.63 0.54 0.6  0.59 0.6  0.63 0.58 0.63 0.6  0.49]\n"
+     ]
+    }
+   ],
+   "source": [
+    "imdb = pd.read_csv('Data/imdb_labelled.csv')\n",
+    "keywords1 = ['good', 'great', 'winner', 'amazing', 'interesting', 'best', \n",
+    "            'dynamic', 'cool', 'love', 'fun', 'classic', 'beautiful',\n",
+    "            'nice']\n",
+    "\n",
+    "for key in keywords1:\n",
+    "    # Note that we add spaces around the key so that we're getting the word,\n",
+    "    # not just pattern matching.\n",
+    "    imdb[str(key)] = imdb.comment.str.contains(\n",
+    "        ' ' + str(key) + ' ',\n",
+    "        case=False\n",
+    "    )\n",
+    "\n",
+    "imdb['target'] = (imdb['target'] == 1)\n",
+    "data = imdb[keywords1]\n",
+    "target = imdb['target']\n",
+    "\n",
+    "from sklearn.naive_bayes import BernoulliNB\n",
+    "bnb = BernoulliNB()\n",
+    "bnb.fit(data, target)\n",
+    "y_pred = bnb.predict(data)\n",
+    "\n",
+    "pct1 = round(((target == y_pred).sum()/data.shape[0])*100, 2)\n",
+    "print(\"Percentage of correctly labeled points out of a total {} points : {}%\".format(\n",
+    "    data.shape[0],\n",
+    "    pct1\n",
+    "))\n",
+    "cmat1 = np.array(confusion_matrix(target, y_pred))\n",
+    "print('Confusion Matrix:') \n",
+    "print(cmat1)\n",
+    "print('Sensitivity % = {}%'.format(round((cmat1[1,1]/(cmat1[1,1]+cmat1[1,0]))*100,2)))\n",
+    "print('Specificity % = {}%'.format(round((cmat1[0,0]/(cmat1[0,1]+cmat1[0,0]))*100,2)))\n",
+    "\n",
+    "X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.2, random_state=20)\n",
+    "print('With 20% Holdout: ' + str(bnb.fit(X_train, y_train).score(X_test, y_test)))\n",
+    "print('Testing on Sample: ' + str(bnb.fit(data, target).score(data, target)))\n",
+    "print('Holdout Group Results:')\n",
+    "hg1 = cross_val_score(bnb, data, target, cv=10)\n",
+    "print(hg1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Percentage of correctly labeled points out of a total 1000 points : 62.0%\n",
+      "Confusion Matrix:\n",
+      "[[475  25]\n",
+      " [355 145]]\n",
+      "Sensitivity % = 29.0%\n",
+      "Specificity % = 95.0%\n",
+      "With 20% Holdout: 0.605\n",
+      "Testing on Sample: 0.62\n",
+      "Holdout Group Results:\n",
+      "[0.63 0.58 0.63 0.61 0.62 0.68 0.62 0.66 0.62 0.5 ]\n"
+     ]
+    }
+   ],
+   "source": [
+    "keywords2 = ['good', 'great', 'amazing', 'interesting', 'best', \n",
+    "            'purchase', 'loved', 'cool',\n",
+    "           'masterpiece', 'love', 'insane', 'funny', 'riveting',\n",
+    "           'convincing', 'enjoyable', 'succeeded', 'classic', 'beautiful', \n",
+    "           'fresh', 'like', 'liked', 'happy', 'brilliant', 'rocked', 'nice']\n",
+    "for key in keywords2:\n",
+    "    # Note that we add spaces around the key so that we're getting the word,\n",
+    "    # not just pattern matching.\n",
+    "    imdb[str(key)] = imdb.comment.str.contains(\n",
+    "        ' ' + str(key) + ' ',\n",
+    "        case=False\n",
+    "    )\n",
+    "\n",
+    "imdb['target'] = (imdb['target'] == 1)\n",
+    "data = imdb[keywords2]\n",
+    "target = imdb['target']\n",
+    "\n",
+    "from sklearn.naive_bayes import BernoulliNB\n",
+    "bnb = BernoulliNB()\n",
+    "bnb.fit(data, target)\n",
+    "y_pred = bnb.predict(data)\n",
+    "\n",
+    "pct2 = round(((target == y_pred).sum()/data.shape[0])*100, 2)\n",
+    "print(\"Percentage of correctly labeled points out of a total {} points : {}%\".format(\n",
+    "    data.shape[0],\n",
+    "    round(((target == y_pred).sum()/data.shape[0])*100, 2)\n",
+    "))\n",
+    "cmat2 = np.array(confusion_matrix(target, y_pred))\n",
+    "print('Confusion Matrix:') \n",
+    "print(cmat2)\n",
+    "print('Sensitivity % = {}%'.format(round((cmat2[1,1]/(cmat2[1,1]+cmat2[1,0]))*100,2)))\n",
+    "print('Specificity % = {}%'.format(round((cmat2[0,0]/(cmat2[0,1]+cmat2[0,0]))*100,2)))\n",
+    "\n",
+    "X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.2, random_state=20)\n",
+    "print('With 20% Holdout: ' + str(bnb.fit(X_train, y_train).score(X_test, y_test)))\n",
+    "print('Testing on Sample: ' + str(bnb.fit(data, target).score(data, target)))\n",
+    "print('Holdout Group Results:')\n",
+    "hg2 = cross_val_score(bnb, data, target, cv=10)\n",
+    "print(hg2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Percentage of correctly labeled points out of a total 1000 points : 57.0%\n",
+      "Confusion Matrix:\n",
+      "[[498   2]\n",
+      " [428  72]]\n",
+      "Sensitivity % = 14.4%\n",
+      "Specificity % = 99.6%\n",
+      "With 20% Holdout: 0.55\n",
+      "Testing on Sample: 0.57\n",
+      "Holdout Group Results:\n",
+      "[0.54 0.58 0.57 0.55 0.58 0.63 0.55 0.58 0.54 0.53]\n"
+     ]
+    }
+   ],
+   "source": [
+    "keywords3 = ['dynamic', 'purchase', 'loved', 'cool', 'no other film',\n",
+    "           'a masterpiece', 'love', 'insane', 'fun', 'funny', 'riveting',\n",
+    "           'convincing', 'enjoyable', 'succeeded', 'classic', 'beautiful', \n",
+    "           'fresh', 'joy', 'like', 'liked', 'happy', 'brilliant', 'rocked', 'nice']\n",
+    "for key in keywords3:\n",
+    "    # Note that we add spaces around the key so that we're getting the word,\n",
+    "    # not just pattern matching.\n",
+    "    imdb[str(key)] = imdb.comment.str.contains(\n",
+    "        ' ' + str(key) + ' ',\n",
+    "        case=False\n",
+    "    )\n",
+    "\n",
+    "imdb['target'] = (imdb['target'] == 1)\n",
+    "data = imdb[keywords3]\n",
+    "target = imdb['target']\n",
+    "\n",
+    "from sklearn.naive_bayes import BernoulliNB\n",
+    "bnb = BernoulliNB()\n",
+    "bnb.fit(data, target)\n",
+    "y_pred = bnb.predict(data)\n",
+    "\n",
+    "pct3 = round(((target == y_pred).sum()/data.shape[0])*100, 2)\n",
+    "print(\"Percentage of correctly labeled points out of a total {} points : {}%\".format(\n",
+    "    data.shape[0],\n",
+    "    round(((target == y_pred).sum()/data.shape[0])*100, 2)\n",
+    "))\n",
+    "\n",
+    "cmat3 = np.array(confusion_matrix(target, y_pred))\n",
+    "print('Confusion Matrix:') \n",
+    "print(cmat3)\n",
+    "print('Sensitivity % = {}%'.format(round((cmat3[1,1]/(cmat3[1,1]+cmat3[1,0]))*100,2)))\n",
+    "print('Specificity % = {}%'.format(round((cmat3[0,0]/(cmat3[0,1]+cmat3[0,0]))*100,2)))\n",
+    "\n",
+    "X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.2, random_state=20)\n",
+    "print('With 20% Holdout: ' + str(bnb.fit(X_train, y_train).score(X_test, y_test)))\n",
+    "print('Testing on Sample: ' + str(bnb.fit(data, target).score(data, target)))\n",
+    "print('Holdout Group Results:')\n",
+    "hg3 = cross_val_score(bnb, data, target, cv=10)\n",
+    "print(hg3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Percentage of correctly labeled points out of a total 1000 points : 61.6%\n",
+      "Confusion Matrix:\n",
+      "[[474  26]\n",
+      " [358 142]]\n",
+      "Sensitivity % = 28.4%\n",
+      "Specificity % = 94.8%\n",
+      "With 20% Holdout: 0.595\n",
+      "Testing on Sample: 0.616\n",
+      "Holdout Group Results:\n",
+      "[0.64 0.57 0.63 0.59 0.63 0.71 0.6  0.64 0.6  0.5 ]\n"
+     ]
+    }
+   ],
+   "source": [
+    "keywords4 = ['good', 'great', 'winner', 'amazing', 'interesting', 'best', \n",
+    "            'dynamic', 'purchase', 'cool', 'love', 'insane', 'fun', 'funny',\n",
+    "           'convincing', 'enjoyable', 'succeeded', 'classic', '10/10', 'beautiful', \n",
+    "           'fresh', 'joy', 'like', 'happy', 'brilliant', 'rocked', 'nice', '!', '10']\n",
+    "for key in keywords4:\n",
+    "    # Note that we add spaces around the key so that we're getting the word,\n",
+    "    # not just pattern matching.\n",
+    "    imdb[str(key)] = imdb.comment.str.contains(\n",
+    "        ' ' + str(key) + ' ',\n",
+    "        case=False\n",
+    "    )\n",
+    "\n",
+    "imdb['target'] = (imdb['target'] == 1)\n",
+    "data = imdb[keywords4]\n",
+    "target = imdb['target']\n",
+    "\n",
+    "from sklearn.naive_bayes import BernoulliNB\n",
+    "bnb = BernoulliNB()\n",
+    "bnb.fit(data, target)\n",
+    "y_pred = bnb.predict(data)\n",
+    "\n",
+    "pct4 = round(((target == y_pred).sum()/data.shape[0])*100, 2)\n",
+    "print(\"Percentage of correctly labeled points out of a total {} points : {}%\".format(\n",
+    "    data.shape[0],\n",
+    "    round(((target == y_pred).sum()/data.shape[0])*100, 2)\n",
+    "))\n",
+    "\n",
+    "cmat4 = np.array(confusion_matrix(target, y_pred))\n",
+    "print('Confusion Matrix:') \n",
+    "print(cmat4)\n",
+    "print('Sensitivity % = {}%'.format(round((cmat4[1,1]/(cmat4[1,1]+cmat4[1,0]))*100,2)))\n",
+    "print('Specificity % = {}%'.format(round((cmat4[0,0]/(cmat4[0,1]+cmat4[0,0]))*100,2)))\n",
+    "\n",
+    "X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.2, random_state=20)\n",
+    "print('With 20% Holdout: ' + str(bnb.fit(X_train, y_train).score(X_test, y_test)))\n",
+    "print('Testing on Sample: ' + str(bnb.fit(data, target).score(data, target)))\n",
+    "print('Holdout Group Results:')\n",
+    "hg4 = cross_val_score(bnb, data, target, cv=10)\n",
+    "print(hg4)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Percentage of correctly labeled points out of a total 1000 points : 63.5%\n",
+      "Confusion Matrix:\n",
+      "[[474  26]\n",
+      " [339 161]]\n",
+      "Sensitivity % = 32.2%\n",
+      "Specificity % = 94.8%\n",
+      "With 20% Holdout: 0.605\n",
+      "Testing on Sample: 0.635\n",
+      "Holdout Group Results:\n",
+      "[0.65 0.6  0.64 0.61 0.64 0.71 0.63 0.67 0.62 0.51]\n"
+     ]
+    }
+   ],
+   "source": [
+    "keywords5 = ['good', 'great', 'winner', 'amazing', 'interesting', 'best', \n",
+    "            'dynamic', 'purchase', 'loved', 'cool', 'no other film',\n",
+    "           'masterpiece', 'love', 'insane', 'fun', 'funny', 'riveting',\n",
+    "           'convincing', 'enjoyable', 'succeeded', 'classic', '10', 'beautiful',\n",
+    "           'fresh', 'joy', 'like', 'liked', 'happy', 'brilliant', 'rocked', 'nice', '!', '10/10']\n",
+    "for key in keywords5:\n",
+    "    # Note that we add spaces around the key so that we're getting the word,\n",
+    "    # not just pattern matching.\n",
+    "    imdb[str(key)] = imdb.comment.str.contains(\n",
+    "        ' ' + str(key) + ' ',\n",
+    "        case=False\n",
+    "    )\n",
+    "\n",
+    "imdb['target'] = (imdb['target'] == 1)\n",
+    "data = imdb[keywords5]\n",
+    "target = imdb['target']\n",
+    "\n",
+    "from sklearn.naive_bayes import BernoulliNB\n",
+    "bnb = BernoulliNB()\n",
+    "bnb.fit(data, target)\n",
+    "y_pred = bnb.predict(data)\n",
+    "\n",
+    "pct5 = round(((target == y_pred).sum()/data.shape[0])*100, 2)\n",
+    "print(\"Percentage of correctly labeled points out of a total {} points : {}%\".format(\n",
+    "    data.shape[0],\n",
+    "    round(((target == y_pred).sum()/data.shape[0])*100, 2)\n",
+    "))\n",
+    "\n",
+    "cmat5 = np.array(confusion_matrix(target, y_pred))\n",
+    "print('Confusion Matrix:') \n",
+    "print(cmat5)\n",
+    "print('Sensitivity % = {}%'.format(round((cmat5[1,1]/(cmat5[1,1]+cmat5[1,0]))*100,2)))\n",
+    "print('Specificity % = {}%'.format(round((cmat5[0,0]/(cmat5[0,1]+cmat5[0,0]))*100,2)))\n",
+    "\n",
+    "X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.2, random_state=20)\n",
+    "print('With 20% Holdout: ' + str(bnb.fit(X_train, y_train).score(X_test, y_test)))\n",
+    "print('Testing on Sample: ' + str(bnb.fit(data, target).score(data, target)))\n",
+    "print('Holdout Group Results:')\n",
+    "hg5 = cross_val_score(bnb, data, target, cv=10)\n",
+    "print(hg5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Holdout Group Results:\n",
+      "Percentage Correct Key 1: 59.0%\n",
+      "[0.63 0.54 0.6  0.59 0.6  0.63 0.58 0.63 0.6  0.49]\n",
+      "Percentage Correct Key 2: 62.0%\n",
+      "[0.63 0.58 0.63 0.61 0.62 0.68 0.62 0.66 0.62 0.5 ]\n",
+      "Percentage Correct Key 3: 57.0%\n",
+      "[0.54 0.58 0.57 0.55 0.58 0.63 0.55 0.58 0.54 0.53]\n",
+      "Percentage Correct Key 4: 61.6%\n",
+      "[0.64 0.57 0.63 0.59 0.63 0.71 0.6  0.64 0.6  0.5 ]\n",
+      "Percentage Correct Key 5: 63.5%\n",
+      "[0.65 0.6  0.64 0.61 0.64 0.71 0.63 0.67 0.62 0.51]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('Holdout Group Results:')\n",
+    "print('Percentage Correct Key 1: {}%'.format(pct1))\n",
+    "print(hg1)\n",
+    "print('Percentage Correct Key 2: {}%'.format(pct2))\n",
+    "print(hg2)\n",
+    "print('Percentage Correct Key 3: {}%'.format(pct3))\n",
+    "print(hg3)\n",
+    "print('Percentage Correct Key 4: {}%'.format(pct4))\n",
+    "print(hg4)\n",
+    "print('Percentage Correct Key 5: {}%'.format(pct5))\n",
+    "print(hg5)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Comparison of top Keywords\n",
+    "Looking at the data I saw something unique from the two keywords group (#2 & #5).\n",
+    "\n",
+    "keywords2 = ['good', 'great', 'amazing', 'interesting', 'best', 'purchase', 'loved', 'cool', 'masterpiece', 'love', 'insane', 'funny', 'riveting', 'convincing', 'enjoyable', 'succeeded', 'classic', 'beautiful', 'fresh', 'like', 'liked', 'happy', 'brilliant', 'rocked', 'nice']\n",
+    "\n",
+    "keywords5 = ['good', 'great', 'winner', 'amazing', 'interesting', 'best', 'dynamic', 'purchase', 'loved', 'cool', 'no other film', 'masterpiece', 'love', 'insane', 'fun', 'funny', 'riveting', 'convincing', 'enjoyable', 'succeeded', 'classic', '10', 'beautiful', 'fresh', 'joy', 'like', 'liked', 'happy', 'brilliant', 'rocked', 'nice', '!', '10/10']\n",
+    "\n",
+    "Keywords 5 was my catch all keywords. I do believe these keywords tried to grab anything and everything. From variance in words, numbers, even phrases. This group of words only performed 1.5% better than Keywords group 2. Which had more generic but common words only. Looking deeper at the error analysis, you see that the Keywords group 2 was more accurate when applied to 10 random holdout groups. It was also better at identifiying negative comments by 0.2%. I think with these results i would further explore how the more generic keywords in group 2 adequetely performed for our model. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Challenge Questions\n",
+    "\n",
+    "1. Do any of the classifiers seem to overfit?\n",
+    "\n",
+    "No, Although classifers using phrases, and numbers such as, 'no other film' & '10/10\", did try to pick certain positive results, Naive Bayes model tends to not overfit.\n",
+    "\n",
+    "2. Which seem to perform the best? Why?\n",
+    "\n",
+    "The generic more broad keyword classifiers worked best because they were more accurate and applied to a bigger simpler output.\n",
+    "\n",
+    "3. Which features seemed to be the most impactful to performance?\n",
+    "\n",
+    "Features that were commonly positive worked best at identifying positive comments. It a case of being broadly specific. i.e. using words that are more commonly positive and not using them in specific context."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
