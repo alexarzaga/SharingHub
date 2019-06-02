@@ -1,0 +1,349 @@
+,City,Population,Murder,Robbery,Population_sq
+0,Adams Village,1861,0,0,3463321
+1,Addison Town and Village,2577,0,0,6640929
+2,Akron Village,2846,0,0,8099716
+3,Albany,97956,1,1,9595377936
+4,Albion Village,6388,0,1,40806544
+5,Alfred Village,4089,0,1,16719921
+6,Allegany Village,1781,0,0,3171961
+7,Amherst Town,118296,1,1,13993943616
+8,Amityville Village,9519,0,1,90611361
+9,Amsterdam,18182,0,1,330585124
+10,Arcade Village,2053,0,0,4214809
+11,Ardsley Village,4523,0,1,20457529
+12,Asharoken Village,658,0,0,432964
+13,Attica Village,2522,0,0,6360484
+14,Auburn,27270,1,1,743652900
+15,Avon Village,3333,0,1,11108889
+16,Baldwinsville Village,7473,0,1,55845729
+17,Ballston Spa Village,5418,0,1,29354724
+18,Batavia,15374,0,1,236359876
+19,Bath Village,5733,0,1,32867289
+20,Bedford Town,17627,0,1,310711129
+21,Bethlehem Town,34243,0,1,1172583049
+22,Binghamton,46304,1,1,2144060416
+23,Black River,1410,0,0,1988100
+24,Blooming Grove Town,12001,0,0,144024001
+25,Bolivar Village,1022,0,0,1044484
+26,Bolton Town,2325,0,0,5405625
+27,Boonville Village,2054,0,0,4218916
+28,Brant Town,2065,0,1,4264225
+29,Brewster,2358,0,0,5560164
+30,Briarcliff Manor Village,7976,0,0,63616576
+31,Brighton Town,36689,1,1,1346082721
+32,Brockport Village,8284,1,1,68624656
+33,Bronxville Village,6390,0,0,40832100
+34,Brownville Village,1174,0,0,1378276
+35,Buffalo,258789,1,1,66971746521
+36,Cairo Town,6577,0,0,43256929
+37,Cambridge Village,1854,0,0,3437316
+38,Camden Village,2219,0,0,4923961
+39,Camillus Town and Village,24165,0,0,583947225
+40,Canandaigua,10470,0,1,109620900
+41,Canastota Village,4704,0,0,22127616
+42,Canisteo Village,2246,0,1,5044516
+43,Canton Village,6794,0,1,46158436
+44,Cape Vincent Village,762,0,0,580644
+45,Carmel Town,34462,0,0,1187629444
+46,Carroll Town,3481,0,0,12117361
+47,Carthage Village,3862,0,0,14915044
+48,Cattaraugus Village,980,0,0,960400
+49,Cayuga Heights Village,3749,0,1,14055001
+50,Cazenovia Village,2732,0,0,7463824
+51,Central Square Village,1835,0,1,3367225
+52,Chatham Village,1733,0,0,3003289
+53,Cheektowaga Town,78361,0,1,6140446321
+54,Chester Town,7990,0,0,63840100
+55,Chittenango Village,5016,0,0,25160256
+56,Cicero Town,29571,0,1,874444041
+57,Clarkstown Town,80705,0,1,6513297025
+58,Clyde Village,2049,0,1,4198401
+59,Cobleskill Village,4503,0,1,20277009
+60,Coeymans Town,7458,0,0,55621764
+61,Cohoes,16179,0,1,261760041
+62,Colonie Town,78215,0,1,6117586225
+63,Cooperstown Village,1827,0,0,3337929
+64,Corning,11087,0,1,122921569
+65,Cornwall-on-Hudson Village,2978,0,0,8868484
+66,Cornwall Town,9543,0,0,91068849
+67,Cortland,19331,0,1,373687561
+68,Crawford Town,9264,0,1,85821696
+69,Croton-on-Hudson Village,8180,0,1,66912400
+70,Cuba Town,3209,0,0,10297681
+71,Dansville Village,4605,0,1,21206025
+72,Deerpark Town,7827,0,1,61261929
+73,Delhi Village,2985,0,0,8910225
+74,Depew Village,15189,0,1,230705721
+75,Deposit Village,1628,0,0,2650384
+76,Dewitt Town,22681,0,1,514427761
+77,Dexter Village,1122,0,0,1258884
+78,Dobbs Ferry Village,11021,0,0,121462441
+79,Dolgeville Village,2191,0,0,4800481
+80,Dryden Village,1913,0,1,3659569
+81,Dunkirk,12329,0,1,152004241
+82,East Aurora-Aurora Town,13774,0,1,189723076
+83,Eastchester Town,19800,0,0,392040000
+84,East Fishkill Town,29315,1,1,859369225
+85,East Greenbush Town,16470,0,1,271260900
+86,East Hampton Town,19674,0,1,387066276
+87,East Hampton Village,1104,0,0,1218816
+88,East Rochester Village,6596,1,1,43507216
+89,East Syracuse Village,3036,0,1,9217296
+90,Eden Town,7684,0,0,59043856
+91,Ellenville Village,4124,0,1,17007376
+92,Ellicott Town,5144,0,1,26460736
+93,Elmira,28921,0,1,836424241
+94,Elmira Heights Village,4079,0,1,16638241
+95,Elmira Town,5948,0,0,35378704
+96,Endicott Village,13122,0,1,172186884
+97,Evans Town,16292,0,1,265429264
+98,Fairport Village,5335,0,0,28462225
+99,Fallsburg Town,12109,1,0,146627881
+100,Fishkill Town,20435,0,1,417589225
+101,Floral Park Village,15926,0,1,253637476
+102,Florida Village,2842,0,0,8076964
+103,Fort Plain Village,2265,0,1,5130225
+104,Frankfort Town,5033,0,0,25331089
+105,Frankfort Village,2579,0,0,6651241
+106,Franklinville Village,1702,0,1,2896804
+107,Fredonia Village,10988,0,1,120736144
+108,Freeport Village,43214,0,1,1867449796
+109,Friendship Town,1960,0,0,3841600
+110,Fulton City,11739,0,1,137804121
+111,Garden City Village,22596,0,1,510579216
+112,Gates Town,28468,0,1,810427024
+113,Geddes Town,10442,0,1,109035364
+114,Geneseo Village,7891,0,1,62267881
+115,Geneva,13194,1,1,174081636
+116,Germantown Town,1926,0,0,3709476
+117,Glen Cove,27134,0,1,736253956
+118,Glen Park Village,526,0,0,276676
+119,Glens Falls,14582,0,1,212634724
+120,Glenville Town,21839,0,1,476941921
+121,Gloversville,15315,0,1,234549225
+122,Goshen Village,5400,0,1,29160000
+123,Gowanda Village,2663,0,0,7091569
+124,Granville Village,2498,0,0,6240004
+125,Great Neck Estates Village,2794,0,0,7806436
+126,Greece Town,96667,0,1,9344508889
+127,Greenburgh Town,44787,1,1,2005875369
+128,Greene Village,1553,0,0,2411809
+129,Green Island Village,2621,0,1,6869641
+130,Greenport Town,4065,0,1,16524225
+131,Greenwood Lake Village,3118,0,0,9721924
+132,Groton Village,2381,0,0,5669161
+133,Guilderland Town,33805,0,1,1142778025
+134,Hamburg Town,45535,1,1,2073436225
+135,Hamburg Village,9517,0,0,90573289
+136,Hammondsport Village,656,0,0,430336
+137,Harrison Town,27876,0,1,777071376
+138,Hastings-on-Hudson Village,7937,0,1,62995969
+139,Haverstraw Town,37196,0,1,1383542416
+140,Hempstead Village,55198,1,1,3046819204
+141,Herkimer Village,7693,0,1,59182249
+142,Highland Falls Village,3847,0,0,14799409
+143,Homer Village,3270,0,0,10692900
+144,Hoosick Falls Village,3466,0,1,12013156
+145,Hornell,8481,0,0,71927361
+146,Horseheads Village,6701,0,0,44903401
+147,Hudson,6676,0,1,44568976
+148,Hudson Falls Village,7187,0,1,51652969
+149,Huntington Bay Village,1428,0,0,2039184
+150,Hyde Park Town,21397,0,1,457831609
+151,Ilion Village,8002,0,1,64032004
+152,Irondequoit Town,51506,1,1,2652868036
+153,Irvington Village,6530,0,0,42640900
+154,Jamestown,30658,0,1,939912964
+155,Johnson City Village,14866,1,1,220997956
+156,Johnstown,8531,0,1,72777961
+157,Jordan Village,1350,0,0,1822500
+158,Kenmore Village,15256,1,1,232745536
+159,Kent Town,13381,0,0,179051161
+160,Kings Point Village,5042,0,0,25421764
+161,Kingston,23665,1,1,560032225
+162,Kirkland Town,8296,0,0,68823616
+163,Lackawanna,17965,1,1,322741225
+164,Lake Placid Village,2491,0,0,6205081
+165,Lake Success Village,3009,0,0,9054081
+166,Lakewood-Busti,7280,0,1,52998400
+167,Lancaster Town,36369,0,1,1322704161
+168,Larchmont Village,5930,0,0,35164900
+169,Le Roy Village,4354,0,1,18957316
+170,Lewiston Town and Village,16175,0,1,261630625
+171,Liberty Village,4285,0,1,18361225
+172,Little Falls,4912,0,1,24127744
+173,Liverpool Village,2311,0,1,5340721
+174,Lloyd Harbor Village,3683,0,0,13564489
+175,Lloyd Town,10751,0,0,115584001
+176,Lockport,20904,0,1,436977216
+177,Long Beach,33534,0,1,1124529156
+178,Lowville Village,3457,0,0,11950849
+179,Lynbrook Village,19528,0,1,381342784
+180,Lyons Village,3543,0,1,12552849
+181,Macedon Town and Village,9132,0,1,83393424
+182,Malone Village,5881,0,1,34586161
+183,Malverne Village,8542,0,1,72965764
+184,Mamaroneck Town,12146,0,1,147525316
+185,Mamaroneck Village,19164,0,1,367258896
+186,Manchester Village,1688,0,0,2849344
+187,Manlius Town,24461,0,1,598340521
+188,Marcellus Village,1792,0,0,3211264
+189,Marlborough Town,8769,0,1,76895361
+190,Massena Village,10808,0,1,116812864
+191,Mechanicville,5213,0,1,27175369
+192,Medina Village,5953,0,1,35438209
+193,Menands Village,3991,0,1,15928081
+194,Middleport Village,1813,0,0,3286969
+195,Middletown,27809,1,1,773340481
+196,Monroe Village,8544,0,1,72999936
+197,Montgomery Town,8961,0,1,80299521
+198,Montgomery Village,4188,0,0,17539344
+199,Monticello Village,6582,0,1,43322724
+200,Moravia Village,1263,0,0,1595169
+201,Moriah Town,3628,0,0,13162384
+202,Mount Hope Town,7112,0,0,50580544
+203,Mount Kisco Village,11028,0,1,121616784
+204,Mount Morris Village,2912,0,1,8479744
+205,Mount Pleasant Town,26564,0,1,705646096
+206,Mount Vernon,68071,1,1,4633661041
+207,Newark Village,8978,0,1,80604484
+208,New Berlin Town,1622,0,0,2630884
+209,Newburgh,28571,1,1,816302041
+210,Newburgh Town,30984,0,1,960008256
+211,New Castle Town,17864,0,0,319122496
+212,New Hartford Town and Village,20355,0,1,414326025
+213,New Paltz Town and Village,14248,0,1,203005504
+214,New Rochelle,78800,0,1,6209440000
+215,New Windsor Town,25767,0,1,663938289
+216,New York,8396126,1,1,70494931807876
+217,New York Mills Village,3324,0,0,11048976
+218,Niagara Falls,49574,1,1,2457581476
+219,Niagara Town,8241,0,1,67914081
+220,Niskayuna Town,22097,0,1,488277409
+221,Nissequogue Village,1754,0,0,3076516
+222,North Castle Town,12077,0,0,145853929
+223,North Greenbush Town,12137,0,1,147306769
+224,Northport Village,7411,0,1,54922921
+225,North Syracuse Village,6964,0,0,48497296
+226,North Tonawanda,31176,1,1,971942976
+227,Northville Village,1097,0,0,1203409
+228,Norwich,7049,0,0,49688401
+229,Ogdensburg,11072,0,1,122589184
+230,Ogden Town,20026,0,1,401040676
+231,Old Brookville Village,2171,0,1,4713241
+232,Old Westbury Village,4625,0,0,21390625
+233,Olean,14150,0,1,200222500
+234,Oneida,11220,0,1,125888400
+235,Oneonta City,13825,0,1,191130625
+236,Orangetown Town,37438,0,1,1401603844
+237,Orchard Park Town,29386,0,1,863536996
+238,Oriskany Village,1385,0,0,1918225
+239,Ossining Village,25314,0,1,640798596
+240,Oswego City,18139,1,1,329023321
+241,Owego Village,3818,0,1,14577124
+242,Oxford Village,1433,0,1,2053489
+243,Oyster Bay Cove Village,4233,0,0,17918289
+244,Painted Post Village,2116,0,0,4477456
+245,Palmyra Village,3475,0,0,12075625
+246,Peekskill,23908,0,1,571592464
+247,Pelham Manor Village,5558,0,1,30891364
+248,Pelham Village,6982,0,1,48748324
+249,Penn Yan Village,5123,0,1,26245129
+250,Perry Village,3633,0,0,13198689
+251,Piermont Village,2550,0,0,6502500
+252,Pine Plains Town,2460,0,0,6051600
+253,Plattekill Town,10374,0,1,107619876
+254,Plattsburgh City,19672,0,1,386987584
+255,Pleasantville Village,7100,0,0,50410000
+256,Port Byron Village,1274,0,0,1623076
+257,Port Chester Village,29328,0,1,860131584
+258,Port Dickinson Village,1602,0,0,2566404
+259,Port Jervis,8689,1,1,75498721
+260,Portville Village,997,0,0,994009
+261,Potsdam Village,9613,0,0,92409769
+262,Poughkeepsie,30778,1,1,947285284
+263,Poughkeepsie Town,43866,1,1,1924225956
+264,Pound Ridge Town,5200,0,0,27040000
+265,Pulaski Village,2354,0,0,5541316
+266,Quogue Village,977,0,0,954529
+267,Ramapo Town,87204,1,1,7604537616
+268,Red Hook Village,1947,0,0,3790809
+269,Rensselaer City,9517,0,1,90573289
+270,Rhinebeck Village,2635,0,0,6943225
+271,Riverhead Town,33789,0,1,1141696521
+272,Rochester,210562,1,1,44336355844
+273,Rockville Centre Village,24129,1,1,582208641
+274,Rome,32557,1,1,1059958249
+275,Rosendale Town,6026,0,0,36312676
+276,Rotterdam Town,29146,1,1,849489316
+277,Rye Brook Village,9480,0,1,89870400
+278,Sag Harbor Village,2279,0,1,5193841
+279,Salamanca,5691,0,1,32387481
+280,Sands Point Village,2715,0,0,7371225
+281,Saranac Lake Village,5369,1,1,28826161
+282,Saratoga Springs,27081,1,1,733380561
+283,Saugerties Town,19318,0,1,373185124
+284,Scarsdale Village,17564,0,0,308494096
+285,Schenectady,66041,1,1,4361413681
+286,Schodack Town,11573,0,1,133934329
+287,Schoharie Village,872,0,0,760384
+288,Scotia Village,7700,1,1,59290000
+289,Seneca Falls Town,2362,0,1,5579044
+290,Shandaken Town,3043,0,0,9259849
+291,Shawangunk Town,14205,0,0,201782025
+292,Shelter Island Town,2412,0,0,5817744
+293,Sherburne Village,1351,0,0,1825201
+294,Sherrill,3064,0,0,9388096
+295,Shortsville Village,1437,0,0,2064969
+296,Sidney Village,3805,0,1,14478025
+297,Skaneateles Village,2450,0,0,6002500
+298,Sleepy Hollow Village,9996,1,1,99920016
+299,Sodus Village,1805,0,0,3258025
+300,Solvay Village,6487,0,1,42081169
+301,Southampton Town,50603,0,1,2560663609
+302,Southampton Village,3161,0,1,9991921
+303,South Glens Falls Village,3640,0,1,13249600
+304,Southold Town,19963,0,1,398521369
+305,Spring Valley Village,32288,1,1,1042514944
+306,Stillwater Town,6587,0,0,43388569
+307,St. Johnsville Village,1691,0,0,2859481
+308,Stony Point Town,15307,0,1,234304249
+309,Suffern Village,10886,0,1,118504996
+310,Syracuse,143834,1,1,20688219556
+311,Tarrytown Village,11449,0,1,131079601
+312,Ticonderoga Town,4982,0,0,24820324
+313,Tonawanda,14987,0,1,224610169
+314,Tonawanda Town,58082,1,1,3373518724
+315,Troy,49898,1,1,2489810404
+316,Trumansburg Village,1820,0,1,3312400
+317,Tuckahoe Village,6578,0,0,43270084
+318,Tupper Lake Village,3642,0,0,13264164
+319,Tuxedo Park Village,615,0,0,378225
+320,Ulster Town,12195,0,1,148718025
+321,Utica,61686,1,1,3805162596
+322,Vestal Town,27980,0,1,782880400
+323,Walden Village,6887,1,1,47430769
+324,Wallkill Town,27940,0,1,780643600
+325,Walton Village,3012,0,0,9072144
+326,Warsaw Village,3453,0,0,11923209
+327,Washingtonville Village,5828,0,1,33965584
+328,Waterford Town and Village,8392,0,0,70425664
+329,Waterloo Village,5175,0,1,26780625
+330,Watertown,28179,0,1,794056041
+331,Watervliet,10245,1,1,104960025
+332,Watkins Glen Village,1862,0,0,3467044
+333,Waverly Village,4337,0,1,18809569
+334,Webster Town and Village,43777,0,1,1916425729
+335,Weedsport Village,1797,0,0,3229209
+336,Wellsville Village,4574,0,0,20921476
+337,Westhampton Beach Village,1732,0,0,2999824
+338,West Seneca Town,44821,1,1,2008922041
+339,Whitehall Village,2604,0,0,6780816
+340,White Plains,57559,1,1,3313038481
+341,Whitesboro Village,3733,0,0,13935289
+342,Whitestown Town,9141,0,0,83557881
+343,Woodbury Town,10685,0,1,114169225
+344,Woodridge Village,829,0,0,687241
+345,Woodstock Town,5931,0,0,35176761
+346,Yonkers,199134,1,1,39654349956
+347,Yorktown Town,36643,0,1,1342709449
